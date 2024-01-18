@@ -50,20 +50,6 @@ class Database1:
                 cursor.execute(sql, val)
                 connection.commit()
 
-    # def set_send_configuration(self, telegram_id, number_msg, per_time):
-    #     with self._get_connection() as connection:
-    #         is_telegram_id_present = bool(self.find_telegram_id(telegram_id, connection))
-    #         if is_telegram_id_present:
-    #             sql = f'UPDATE {self.send_info_table} set number_msg = %s, per_time = %s WHERE telegram_id = %s '
-    #             val = (number_msg, per_time, telegram_id)
-    #         else:
-    #             sql = f"INSERT INTO {self.send_info_table} (input_password, telegram_id, number_msg, per_time) " \
-    #                   f"VALUES (%s, %s, %s, %s)"
-    #             val = (telegram_id, number_msg, per_time)
-    #         with connection.cursor() as cursor:
-    #             cursor.execute(sql, val)
-    #             connection.commit()
-
     def create_database(self):
         with self._get_connection() as connection:
             with connection.cursor as cursor:
